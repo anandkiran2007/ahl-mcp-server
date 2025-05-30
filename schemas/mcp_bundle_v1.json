@@ -1,0 +1,111 @@
+{
+  "$defs": {
+    "Condition": {
+      "properties": {
+        "code": {
+          "title": "Code",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "description"
+      ],
+      "title": "Condition",
+      "type": "object"
+    },
+    "Medication": {
+      "properties": {
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "dose": {
+          "title": "Dose",
+          "type": "string"
+        }
+      },
+      "required": [
+        "name",
+        "dose"
+      ],
+      "title": "Medication",
+      "type": "object"
+    },
+    "NLPResult": {
+      "properties": {
+        "problems": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Problems",
+          "type": "array"
+        },
+        "medications": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Medications",
+          "type": "array"
+        },
+        "tests": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Tests",
+          "type": "array"
+        }
+      },
+      "required": [
+        "problems",
+        "medications",
+        "tests"
+      ],
+      "title": "NLPResult",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "patient_id": {
+      "title": "Patient Id",
+      "type": "string"
+    },
+    "conditions": {
+      "items": {
+        "$ref": "#/$defs/Condition"
+      },
+      "title": "Conditions",
+      "type": "array"
+    },
+    "medications": {
+      "items": {
+        "$ref": "#/$defs/Medication"
+      },
+      "title": "Medications",
+      "type": "array"
+    },
+    "nlp": {
+      "$ref": "#/$defs/NLPResult"
+    },
+    "model_metadata": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "title": "Model Metadata",
+      "type": "object"
+    }
+  },
+  "required": [
+    "patient_id",
+    "conditions",
+    "medications",
+    "nlp",
+    "model_metadata"
+  ],
+  "title": "MCPBundle",
+  "type": "object"
+}
