@@ -20,7 +20,7 @@ This project is an **open-source Model Context Protocol (MCP) server** that conn
 
 ```bash
 unzip mcp-server.zip
-cd mcp-server
+cd ahl-mcp-server
 ```
 
 ### 2. Install Python Dependencies
