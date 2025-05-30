@@ -1,6 +1,12 @@
 from app.models.context_bundle import MCPBundle, Condition, Medication, NLPResult
 
+from app.core.config import USE_AWS
+
 def build_context_bundle(patient_id: str) -> MCPBundle:
+        if USE_AWS:
+        # Placeholder for real AWS logic
+        raise NotImplementedError('AWS mode not implemented yet')
+
     # Mock data for testing
     return MCPBundle(
         patient_id=patient_id,
